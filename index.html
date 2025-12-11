@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог м'ясних страв</title>
+    <link rel="stylesheet" href="lb7-8_Belonosov.css">
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <h1 class="title">
+            Каталог м'ясних страв
+        </h1>
+    </header>
+
+    <main class="layout">
+        <input type="radio" name="country" id="filter-all" class="filter-input" checked>
+        <input type="radio" name="country" id="filter-australia" class="filter-input">
+        <input type="radio" name="country" id="filter-turkey" class="filter-input">
+        <input type="radio" name="country" id="filter-thailand" class="filter-input">
+        <input type="radio" name="country" id="filter-spain" class="filter-input">
+        <input type="radio" name="country" id="filter-ukraine" class="filter-input">
+        <input type="radio" name="country" id="filter-hungary" class="filter-input">
+        <input type="radio" name="country" id="filter-sweden" class="filter-input">
+        <input type="radio" name="country" id="filter-france" class="filter-input">
+
+        <aside class="filters">
+            <section class="calorie-filter">
+                <h2 class="filters-title">Калорії у порції</h2>
+                <div class="calorie-range">
+                    <input type="range" min="300" max="500" value="300" class="range-input">
+                    <div class="range-labels">
+                        <span>Від 300 до 500 кКал</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="country-filter">
+                <h2 class="filters-title">Країна походження</h2>
+                <div class="country-buttons">
+                    <label for="filter-all" class="country-btn">Усі країни</label>
+                    <label for="filter-australia" class="country-btn">Австралія</label>
+                    <label for="filter-turkey" class="country-btn">Туреччина</label>
+                    <label for="filter-thailand" class="country-btn">Таїланд</label>
+                    <label for="filter-spain" class="country-btn">Іспанія</label>
+                    <label for="filter-ukraine" class="country-btn">Україна</label>
+                    <label for="filter-hungary" class="country-btn">Угорщина</label>
+                    <label for="filter-sweden" class="country-btn">Швеція</label>
+                    <label for="filter-france" class="country-btn">Франція</label>
+                </div>
+                <button type="button" class="reset-filter">
+                    Скинути фільтр — оберіть «Усі країни»
+                </button>
+            </section>
+        </aside>
+
+        <section class="catalog">
+            <article class="card" data-country="australia">
+                <div class="card-image">
+                    <img src="images/Павлова.png" alt="Павлова">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Павлова</h3>
+                    <p class="card-country">Австралія</p>
+                </div>
+                <div class="card-calories">
+                    Калорії у порції: <strong>320 кКал</strong>
+                </div>
+            </article>
+
+            <article class="card" data-country="turkey">
+                <div class="card-image">
+                    <img src="images/Донер-кебаб.png" alt="Донер-кебаб">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Донер-кебаб</h3>
+                    <p class="card-country">Туреччина</p>
+                </div>
+                <div class="card-calories">
+                    Калорії у порції: <strong>450 кКал</strong>
+                </div>
+            </article>
+
+            <article class="card" data-country="thailand">
+                <div class="card-image">
+                    <img src="images/Пад тай.png" alt="Пад-тай">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Пад-тай</h3>
+                    <p class="card-country">Таїланд</p>
+                </div>
+                <div class="card-calories">
+                    Калорії у порції: <strong>380 кКал</strong>
+                </div>
+            </article>
+
+            <article class="card" data-country="spain">
+                <div class="card-image">
+                    <img src="images/Паэлья.png" alt="Паелья">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Паелья</h3>
+                    <p class="card-country">Іспанія</p>
+                </div>
+                <div class="card-calories">
+                    Калорії у порції: <strong>410 кКал</strong>
+                </div>
+            </article>
+
+            <article class="card" data-country="ukraine">
+                <div class="card-image">
+                    <img src="images/Мясной пирог.png" alt="М'ясний пиріг">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">М'ясний пиріг</h3>
+                    <p class="card-country">Україна</p>
+                </div>
+                <div class="card-calories">
+                    Калорії у порції: <strong>365 кКал</strong>
+                </div>
+            </article>
+
+            <article class="card" data-country="hungary">
+                <div class="card-image">
+                    <img src="images/Гуляш.png" alt="Гуляш">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Гуляш</h3>
+                    <p class="card-country">Угорщина</p>
+                </div>
+                <div class="card-calories">
+                    Калорії у порції: <strong>390 кКал</strong>
+                </div>
+            </article>
+
+            <article class="card" data-country="sweden">
+                <div class="card-image">
+                    <img src="images/Фрикадельки.png" alt="Фрикадельки">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Фрикадельки</h3>
+                    <p class="card-country">Швеція</p>
+                </div>
+                <div class="card-calories">
+                    Калорії у порції: <strong>305 кКал</strong>
+                </div>
+            </article>
+
+            <article class="card" data-country="france">
+                <div class="card-image">
+                    <img src="images/Креп.png" alt="Креп">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Креп</h3>
+                    <p class="card-country">Франція</p>
+                </div>
+                <div class="card-calories">
+                    Калорії у порції: <strong>340 кКал</strong>
+                </div>
+            </article>
+        </section>
+    </main>
+</div>
+</body>
+</html>

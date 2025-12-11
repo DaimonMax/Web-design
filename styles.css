@@ -1,0 +1,249 @@
+body {
+    background: #f5f7fb;
+    color: #222;
+}
+
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: #223049;
+}
+
+.title span {
+    color: #e0465b;
+}
+
+.layout {
+    display: block; 
+}
+
+.filter-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.filters {
+    margin-bottom: 24px;
+}
+
+.filters-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #223049;
+}
+
+.calorie-filter {
+    padding: 16px 18px;
+    background: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.calorie-range {
+    margin-top: 8px;
+}
+
+.range-input {
+    width: 100%;
+}
+
+.range-labels {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #555;
+}
+
+.country-filter {
+    padding: 16px 18px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.country-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.country-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #d7dce5;
+    background: #eef2f7;
+    color: #223049;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+#filter-all:checked ~ .filters .country-btn[for="filter-all"],
+#filter-australia:checked ~ .filters .country-btn[for="filter-australia"],
+#filter-turkey:checked   ~ .filters .country-btn[for="filter-turkey"],
+#filter-thailand:checked ~ .filters .country-btn[for="filter-thailand"],
+#filter-spain:checked    ~ .filters .country-btn[for="filter-spain"],
+#filter-ukraine:checked  ~ .filters .country-btn[for="filter-ukraine"],
+#filter-hungary:checked  ~ .filters .country-btn[for="filter-hungary"],
+#filter-sweden:checked   ~ .filters .country-btn[for="filter-sweden"],
+#filter-france:checked   ~ .filters .country-btn[for="filter-france"] {
+    background: #223049;
+    color: #ffffff;
+    border-color: #223049;
+}
+
+.country-btn:hover {
+    background: #dde3ef;
+}
+
+.reset-filter {
+    margin-top: 12px;
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px dashed #c2c8d4;
+    background: #f8fafc;
+    color: #666;
+    cursor: default;
+}
+
+.catalog {
+    display: grid;
+    gap: 18px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card-image {
+    height: 180px;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: top;
+    display: block;
+}
+
+.card-body {
+    padding: 10px 14px 6px;
+    min-height: 70px; 
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card-country {
+    font-size: 13px;
+    color: #666;
+}
+
+.card-calories {
+    margin-top: auto;
+    padding: 8px 14px 12px;
+    font-size: 13px;
+    color: #444;
+    border-top: 1px solid #e2e5ee;
+}
+
+.catalog .card {
+    display: flex;
+}
+
+#filter-australia:checked ~ .catalog .card,
+#filter-turkey:checked   ~ .catalog .card,
+#filter-thailand:checked ~ .catalog .card,
+#filter-spain:checked    ~ .catalog .card,
+#filter-ukraine:checked  ~ .catalog .card,
+#filter-hungary:checked  ~ .catalog .card,
+#filter-sweden:checked   ~ .catalog .card,
+#filter-france:checked   ~ .catalog .card {
+    display: none;
+}
+
+#filter-australia:checked ~ .catalog .card[data-country="australia"],
+#filter-turkey:checked   ~ .catalog .card[data-country="turkey"],
+#filter-thailand:checked ~ .catalog .card[data-country="thailand"],
+#filter-spain:checked    ~ .catalog .card[data-country="spain"],
+#filter-ukraine:checked  ~ .catalog .card[data-country="ukraine"],
+#filter-hungary:checked  ~ .catalog .card[data-country="hungary"],
+#filter-sweden:checked   ~ .catalog .card[data-country="sweden"],
+#filter-france:checked   ~ .catalog .card[data-country="france"] {
+    display: flex;
+}
+
+#filter-all:checked ~ .catalog .card {
+    display: flex;
+}
+
+@media (min-width: 375px) and (max-width: 729px) {
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+
+    .country-buttons {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+}
+
+@media (min-width: 730px) and (max-width: 1199px) {
+    .catalog {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .country-buttons {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+    }
+}
+
+@media (min-width: 1200px) {
+    .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 3fr) 260px;
+        grid-column-gap: 24px;
+        align-items: flex-start;
+    }
+
+    .filters {
+        order: 2;
+    }
+
+    .catalog {
+        order: 1;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .country-buttons {
+        grid-template-columns: 1fr;
+    }
+}
